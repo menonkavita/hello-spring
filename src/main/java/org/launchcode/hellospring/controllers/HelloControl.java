@@ -36,9 +36,27 @@ public class HelloControl {
         return "Hello, " + name + " !";
     }
 
-//    @RequestMapping(value="hellogoodbye", method = {RequestMethod.GET, RequestMethod.POST})
-//    public String hellogoodbye(){
-//        return "Hello! And... Goodbye!!";
-//    }
+
+    // Handles request of the form
+    @GetMapping("form")
+    @ResponseBody
+    public String helloForm(){
+        return "<html>" +
+                "<body>" +
+                "<form action='hello' method='post'>" +                   // submit a request to /hello
+                "<input type='text' name='name'>" +
+                "<input type='submit' value='Greet me!'>" +
+                "</form>" +
+                "</body>" +
+                "</html>";
+    }
+
+
+    // Handling request of form using GET & POST
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value="hello")
+    @ResponseBody
+    public String helloGoodbyeWithQueryParam(@RequestParam String name){
+        return "Hello, " + name + "! And... Goodbye!!";
+    }
 
 }
