@@ -20,9 +20,6 @@ public class HelloController {
             name = "World";
         }
         return createMessage(name, language);
-
-        // For a bonus mission, students can change this response text to look nicer.
-        // This is subjective, but students should be modifying the HTML of the response string.
     }
 
     public static String createMessage(String name, String lang){
@@ -44,7 +41,12 @@ public class HelloController {
             greeting="Hallo ";
         }
 
-        return greeting + " " + name;
+        // For a BONUS MISSION, students can change this response text to look nicer.
+        // This is subjective, but students should be modifying the HTML of the response string.
+        return "--------------" + "<br>" +
+                "<b>" + greeting + "</b>" +
+                "<i>" + " " + name + "</i>" + "<br>" +
+                "--------------" ;
     }
 
 
