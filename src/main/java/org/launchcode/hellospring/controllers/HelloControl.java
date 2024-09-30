@@ -25,7 +25,7 @@ public class HelloControl {
     // Handles request of the form /hell?name=LaunchCode
     @GetMapping("hello")
     @ResponseBody
-    public String hellowithQueryParam(@RequestParam String name){
+    public String helloWithQueryParam(@RequestParam String name){
         return "Hello " + name + " !";
     }
 
