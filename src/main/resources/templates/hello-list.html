@@ -39,5 +39,40 @@
             <li th:text="${item}"></li>
         </ol>
     </div>
+
+
+<!--Conditionals - -->
+<!--    Prints only if there are items in teaOptions-->
+<!--    if-unless works like if-else --- if condition is not true then unless is executed -->
+
+    <h3>Testing out Conditionals </h3>
+    <ol th:if = "${teaOptions.size()}">
+        <li th:each="item : ${teaOptions}" th:text="${item}"></li>
+    </ol>
+    <p th:unless = "${teaOptions.size()}"><br><br>No Tea today!</p>
+
+
+<!--Check your Understanding:-->
+<!--    Q1. You want to display the list only if numbers contains data. Which of the following attributes should you add to the ul tag?-->
+<!--    Ans: Option #1: line #70     <ul th:if = "${numbers.size()}">-->
+
+<!--    Q2. Now you want to display ONLY the positive values in the list. Which of the following attributes -->
+<!--    could you add to the li tag? Select ALL that work.-->
+<!--    Ans: #Option 6:  th:unless = "${number <= 0}"  (On line #72)  -->
+<!--    Correct ans: <li th:text="${number}" th:unless = "${number <= 0}"></li>-->
+
+<!--    Q3. Now you want to display ONLY the positive, even values in the list. -->
+<!--    Which of the following should you add to the li tag?-->
+<!--    Ans: Not in Options# presented by LC; Ans in line #73   -->
+<!--    Correct ans that gives the solution asked by Question: <li th:text="${number}" th:unless = "${number < 0 or number % 2 != 0}"></li>-->
+
+    <h3>Testing out Conditionals - Check your Understanding </h3>
+    <ul th:if = "${numbers.size()}">
+        <th:block th:each = "number : ${numbers}">
+            <li th:text="${number}" th:unless = "${number <= 0}"></li>
+            <li th:text="${number}" th:unless = "${number < 0 or number % 2 != 0}"></li>
+        </th:block>
+    </ul>
+    <p th:unless = "${numbers.size()}"> Numbers has NO Numbers!! </p>
 </body>
 </html>

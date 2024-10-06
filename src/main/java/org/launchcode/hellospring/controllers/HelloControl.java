@@ -74,9 +74,26 @@ public class HelloControl {
         coffeeList.add("Kopi Luwak");
         coffeeList.add("Instant");
 
+        List<String> teaList = new ArrayList<>();
+        teaList.add("Green Tea");
+        teaList.add("Chamomile Tea");
+        teaList.add("Black Tea");
+        teaList.add("Assam Tea");
+
+        List<Integer> numbersList = new ArrayList<>();
+        numbersList.add(-1);
+        numbersList.add(0);
+        numbersList.add(1);
+        numbersList.add(2);
+        numbersList.add(3);
+        numbersList.add(4);
+        numbersList.add(8);
+
 
         model.addAttribute("names", theNames);
         model.addAttribute("coffeeOptions", coffeeList);
+        model.addAttribute("teaOptions", teaList);
+        model.addAttribute("numbers", numbersList);
 
         return "hello-list";            // returns name of the html file that will handle
     }
