@@ -89,7 +89,6 @@ public class HelloControl {
         numbersList.add(4);
         numbersList.add(8);
 
-
         model.addAttribute("names", theNames);
         model.addAttribute("coffeeOptions", coffeeList);
         model.addAttribute("teaOptions", teaList);
