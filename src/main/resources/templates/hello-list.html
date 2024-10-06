@@ -5,6 +5,39 @@
     <title>Document</title>
 </head>
 <body>
+    <ul>
+        <th:block th:each="name : ${names} ">
+            <li th:text="'Item:' + ${name}"> </li>
+        </th:block>
+    </ul>
 
+
+    <!--Iterating through List - Location Matters-->
+    <!--Option #1: Works the way we want!!! -->
+    <!--  Gives - One heading, one ordered list, and 4 coffee names (with the names labeled 1, 2, 3…)  -->
+    <div>
+        <h3>Java Types #1 </h3>
+        <ol>
+            <li th:each="item : ${coffeeOptions}" th:text="${item}"></li>
+        </ol>
+    </div>
+
+    <!--Option #2:-->
+    <!--  Gives - One heading, 4 ordered lists, and 4 coffee names (each name labeled as “1”)-->
+    <div>
+        <h3>Java Types #2 </h3>
+        <ol th:each="item : ${coffeeOptions}">
+            <li th:text="${item}"></li>
+        </ol>
+    </div>
+
+    <!--Option #3:-->
+    <!--  Gives - 4 headings, 4 ordered lists, and 4 coffee names (each name labeled as “1”) -->
+    <div th:each="item : ${coffeeOptions}">
+        <h3>Java Types #3 </h3>
+        <ol>
+            <li th:text="${item}"></li>
+        </ol>
+    </div>
 </body>
 </html>
